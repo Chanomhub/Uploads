@@ -1,6 +1,6 @@
-  
+           
       const uploadForm = document.getElementById('uploadForm');
-      const uploadResultDiv = document.getElementById('uploadResult'); /
+      const uploadResultDiv = document.getElementById('uploadResult');
 
       uploadForm.addEventListener('submit', handleFileUpload);
 
@@ -19,13 +19,13 @@
         // Fetch server information
         const serverInfo = await fetchServerInfo();
         if (!serverInfo) {
-          uploadResultDiv.textContent = 'Error fetching server information'; 
+          uploadResultDiv.textContent = 'Error fetching server information';
           return;
         }
 
         const server = selectServer(serverInfo);
         if (!server) {
-          uploadResultDiv.textContent = 'Unable to select a server'; 
+          uploadResultDiv.textContent = 'Unable to select a server';
           return;
         }
 
@@ -46,10 +46,10 @@
             uploadResultDiv.textContent = 'File uploaded successfully: ' + result.data.downloadPage; 
             // Display download URL or take other actions
           } else {
-            uploadResultDiv.textContent = 'Error uploading file: ' + result.message;
+            uploadResultDiv.textContent = 'Error uploading file: ' + result.message; 
           }
         } catch (error) {
-          uploadResultDiv.textContent = 'Error during upload: ' + error; 
+          uploadResultDiv.textContent = 'Error during upload: ' + error;
         }
       }
 
@@ -76,4 +76,3 @@
         }
         return null;
       }
-  </script>
