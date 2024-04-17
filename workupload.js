@@ -1,4 +1,4 @@
-    const uploadForm = document.getElementById('uploadForm');
+const uploadForm = document.getElementById('uploadForm');
 const fileInput = document.getElementById('fileInput');
 const uploadResult = document.getElementById('uploadResult');
 
@@ -19,9 +19,7 @@ uploadForm.addEventListener('submit', (event) => {
   })
   .then(response => response.json())
   .then(data => {
-    const key = data.files[0].key;
-    const downloadLink = `https://workupload.com/file/${key}`;
-    uploadResult.innerHTML = `<a href="${downloadLink}" target="_blank">${downloadLink}</a>`;
+    uploadResult.textContent = JSON.stringify(data, null, 2);
   })
   .catch(error => {
     console.error('Error:', error);
