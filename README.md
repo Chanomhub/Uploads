@@ -19,7 +19,7 @@
 ```
 
 # Uploads
-Gofile
+**Gofile**
 ```
       
       const uploadForm = document.getElementById('uploadForm');
