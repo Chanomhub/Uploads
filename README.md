@@ -23,7 +23,7 @@ Gofile
 ```
       
       const uploadForm = document.getElementById('uploadForm');
-      const uploadResultDiv = document.getElementById('uploadResult'); // เพิ่มการเข้าถึงส่วนที่จะแสดงผลลัพธ์
+      const uploadResultDiv = document.getElementById('uploadResult');
 
       uploadForm.addEventListener('submit', handleFileUpload);
 
@@ -35,20 +35,20 @@ Gofile
 
         // Check file size (adjust as needed)
         if (file.size > 2147483648) { // 10MB
-          uploadResultDiv.textContent = 'File size is too large'; // แสดงข้อความผลลัพธ์
+          uploadResultDiv.textContent = 'File size is too large'; 
           return;
         }
 
         // Fetch server information
         const serverInfo = await fetchServerInfo();
         if (!serverInfo) {
-          uploadResultDiv.textContent = 'Error fetching server information'; // แสดงข้อความผลลัพธ์
+          uploadResultDiv.textContent = 'Error fetching server information';
           return;
         }
 
         const server = selectServer(serverInfo);
         if (!server) {
-          uploadResultDiv.textContent = 'Unable to select a server'; // แสดงข้อความผลลัพธ์
+          uploadResultDiv.textContent = 'Unable to select a server';
           return;
         }
 
@@ -66,13 +66,13 @@ Gofile
 
           const result = await response.json();
           if (result.status === 'ok') {
-            uploadResultDiv.textContent = 'File uploaded successfully: ' + result.data.downloadPage; // แสดงข้อความผลลัพธ์
+            uploadResultDiv.textContent = 'File uploaded successfully: ' + result.data.downloadPage; 
             // Display download URL or take other actions
           } else {
-            uploadResultDiv.textContent = 'Error uploading file: ' + result.message; // แสดงข้อความผลลัพธ์
+            uploadResultDiv.textContent = 'Error uploading file: ' + result.message; 
           }
         } catch (error) {
-          uploadResultDiv.textContent = 'Error during upload: ' + error; // แสดงข้อความผลลัพธ์
+          uploadResultDiv.textContent = 'Error during upload: ' + error;
         }
       }
 
