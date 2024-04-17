@@ -34,7 +34,7 @@
         const file = fileInput.files[0];
 
         // Check file size (adjust as needed)
-        if (file.size > 2147483648) { // 10MB
+        if (file.size > 2147483648) { // 2GB
           uploadResultDiv.textContent = 'File size is too large'; 
           return;
         }
